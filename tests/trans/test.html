@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   </head>
+   <body>
+
+   <canvas id="canvas" width="400" height="400" style="//background-image: url(input_model.png);"></canvas>
+   <script src="fabric.js"></script>
+   <script src="perspective-transform.js" charset="utf-8"></script>
+   <script src="perspective-transform.min.js" charset="utf-8"></script>
+
+   <script>
+   var canvas = new fabric.Canvas('canvas');
+  fabric.Image.fromURL('input_model.png', function(myImg) {
+      //i create an extra var for to change some image properties
+      var img1 = myImg.set({  left: 0,
+         top: 0 ,
+         width:450,
+         height:450      });
+      canvas.add(img1);
+   });
+
+   fabric.Image.fromURL('single_cover.jpg', function(myImg) {
+      //i create an extra var for to change some image properties
+      var img1 = myImg.set({  left: 0,
+         top: 0 ,
+         width:450,
+         height:450,
+         transformMatrix:[ 0.5, 0.09, 0, 0.8, 0, 0,10]
+      });
+      canvas.add(img1);
+   });
+  
+ 
+  
+
+
+
+
+
+   </script>
+   </body>
+</html>

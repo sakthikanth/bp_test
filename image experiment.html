@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://snorpey.github.io/contrast-distort/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>image experiment</title>
+		<link rel="stylesheet" href="./image experiment_files/global.css">
+<script src="./image experiment_files/require-2.1.4.js" data-main="scripts/src/main"></script>
+	
+	<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="main" src="./image experiment_files/main.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="src/process" src="./image experiment_files/process.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="src/image" src="./image experiment_files/image.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="src/dragdrop" src="./image experiment_files/dragdrop.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="src/controls" src="./image experiment_files/controls.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="src/export-png" src="./image experiment_files/export-png.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="src/save-button" src="./image experiment_files/save-button.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="aux/feature-test" src="./image experiment_files/feature-test.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/signals-1.0.0" src="./image experiment_files/signals-1.0.0.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/html5slider" src="./image experiment_files/html5slider.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="aux/distort" src="./image experiment_files/distort.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="aux/canvas" src="./image experiment_files/canvas.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lib/raf" src="./image experiment_files/raf.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="aux/imagedata-contrast" src="./image experiment_files/imagedata-contrast.js"></script>
+	</head>
+	<body>
+		<article class="content">
+			<h1 class="headline">distort images</h1>
+			<p>drag an image into the browser window to modify it.</p>
+			<p>i oringinally set out to recreate <a href="http://www.bendehaanphotography.com/">ben dehaan</a>s <a href="http://www.bendehaanphotography.com/uncured-timelapse/">uncured inkjet prints</a> in javascript. what i ended up with looks completely different, but is still kind of fun to play with.</p>
+			<p>the script divides the image into a grid and uses the contrast of each cell to distort it.</p>
+			<p>this experiment was created by <a href="http://fishnation.de/">georg</a>. you can follow him on <a href="https://twitter.com/snorpey">twitter</a> or explore the source code on <a href="https://github.com/snorpey/contrast-distort">github</a>.</p>
+			<p>if you like this one, you can check out some of his other javascript experiments <a href="http://snorpey.github.io/experiments/">github</a>.</p>
+		</article>
+		<div class="content is-active" id="controls">
+			<div class="control-wrapper">
+				<label class="control-label" for="amount">distortion amount</label>
+				<input class="control-input" type="range" id="amount" min="0" max="100" value="50">
+			</div>
+			<div class="control-wrapper">
+				<label class="control-label" for="horizontal">horizontal distortion</label>
+				<input class="control-input" type="range" id="horizontal" min="-1" max="1" value="0" step="0.1">
+			</div>
+			<div class="control-wrapper">
+				<label class="control-label" for="vertical">vertical distortion</label>
+				<input class="control-input" type="range" id="vertical" min="-1" max="1" value="1" step="0.1">
+			</div>
+			<div class="control-wrapper">
+				<label class="control-label" for="grid_size">grid size</label>
+				<input class="control-input" type="range" id="grid_size" min="15" max="100" value="40">
+			</div>
+			<div class="control-wrapper">
+				<label class="control-label" for="detail">accuracy</label>
+				<input class="control-input" type="range" id="detail" min="5" max="100" value="50">
+			</div>
+		</div>
+		<div class="export-wrapper">
+			<button id="save-button" class="button">export image</button>
+			<a id="png-button" download="glitched-image.png" target="_blank" class="download-link">download bitmap file<span> (.png)</span></a>
+		</div>
+		<canvas id="canvas" width="645" height="796"></canvas>
+		
+
+</body></html>

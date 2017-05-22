@@ -1,0 +1,38 @@
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="jquery.js"></script>
+   <body>
+      <img src="">
+      <form action = "/process_post" method = "POST">
+         First Name: <input type = "text" name = "first_name"> <br>
+         Last Name: <input type = "text" name = "last_name">
+         <input type = "submit" value = "Submit">
+
+        
+      </form>
+       <button id="btn">click me</button>
+      
+   </body>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#btn").click(function(){
+
+		$.ajax({
+
+				url:'/get_image',
+				success:function(p){
+					alert(p);
+				},error:function(e){
+					alert(e);
+				}
+
+
+	});
+	
+	});
+
+	
+});
+</script>
+</html>
