@@ -15,7 +15,7 @@ for(var i=0; i<pixels.length; i+=4) {
     //process.stdout.write(pixels[i+j] + ' ')
   }
 }
-
+  
 
 
 var fs = require('fs');
@@ -62,9 +62,7 @@ ctx.fill();
     stream.on('end', function(){
       //console.log('saved png');
     });
-
-
-   
+  
   var FisheyeGl = function FisheyeGl(options){
 
   // Defaults:
@@ -152,8 +150,8 @@ ctx.fill();
     if(canvas == null){
       throw new Error("there is no canvas on this page");
     }
-    require('gl');
-    var names = ["webgl","webkit-3d", "moz-webgl"];
+    require('node-canvas');
+    var names = ["node-canvas"];
     for (var i = 0; i < names.length; ++i) {
       var gl;
       try {
